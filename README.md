@@ -113,6 +113,8 @@ _Esse parâmetro sór será necessário implementar, quando criarmos os endpoint
 
 Esteja preparado para retornar uma mensagem de erro caso não seja possível completar a funcionalidade em cada endpoint da API.
 
+Deve ser criada uma documentação dos endpoints no **postman**
+
 ## Dicas
 
 Para conseguir resolver este desafio será necessário:
