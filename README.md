@@ -119,14 +119,14 @@ Deve ser criada uma documentação dos endpoints no **postman**
 
 Para conseguir resolver este desafio será necessário:
 
--   [ ] Criar um servidor no formato de API (pode utilizar o express-generator): https://expressjs.com/en/starter/generator.html
--   [ ] Instalar o **nodemon** como dependência de desenvolvimento.
--   [ ] Instalar o Sequelize, Sequelize CLI e o driver do MySQL.
--   [ ] Instalar a lib do **dotenv** para trabalhar com variáveis de ambiente.
--   [ ] Criar o arquivo .sequelizerc e realizar a configuração.
--   [ ] Criar o arquivo .env e criar as variáveis de ambiente.
--   [ ] Criar o banco de dados utilizando o CLI do sequelize
--   [ ] Criar a migration para gerar a tabela de livros
--   [ ] Criar a seeder para popular o banco de dados com os arquivos que temos no "banco de dados JS".
--   [ ] Criar as rotas do endpoint de livros.
--   [ ] Criar os controllers para realizar o CRUD.
+-   [x] Criar um servidor no formato de API (pode utilizar o express-generator): https://expressjs.com/en/starter/generator.html
+-   [x] Instalar o **nodemon** como dependência de desenvolvimento.
+-   [x] Instalar o Sequelize, Sequelize CLI e o driver do MySQL.
+-   [x] Instalar a lib do **dotenv** para trabalhar com variáveis de ambiente.
+-   [x] Criar o arquivo .sequelizerc e realizar a configuração.
+-   [x] Criar o arquivo .env e criar as variáveis de ambiente.
+-   [x] Criar o banco de dados utilizando o CLI do sequelize
+-   [x] Criar a migration para gerar a tabela de livros
+-   [x] Criar a seeder para popular o banco de dados com os arquivos que temos no "banco de dados JS".
+-   [x] Criar as rotas do endpoint de livros.
+-   [x] Criar os controllers para realizar o CRUD.

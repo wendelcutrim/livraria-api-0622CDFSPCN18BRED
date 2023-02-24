@@ -1,4 +1,4 @@
-export const colectionBooks = [
+const colectionBooks = [
     {
         id: 1,
         title: "Recess: School's Out",
@@ -1002,3 +1002,5 @@ export const colectionBooks = [
         updatedAt: new Date().toISOString()
     }
 ]
+
+module.exports =  { colectionBooks };
