@@ -1,0 +1,245 @@
+{
+	"info": {
+		"_postman_id": "2b645762-d237-4866-aa86-f75225c230f2",
+		"name": "dh-bookstore",
+		"description": "# Apresentação\n\nDocumentação para utilização da API.\n\n_Versão atual: 1_\n\n## API Endpoints\n\n### Show all Books:\n\n`/bookstore/api/v1/`\n\n# Error codes\n\n**400 - Bad Request**\n\nDados enviados de forma incorreta ou fora do padrão.\n\n**404 - unauthorized**  \nSem autorização suficiente para acessar o recurso desejado.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16679310"
+	},
+	"item": [
+		{
+			"name": "Public Routes",
+			"item": [
+				{
+					"name": "Books",
+					"item": [
+						{
+							"name": "Get All Books",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/livros",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"livros"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get a Book",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/livros/2",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"livros",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Register User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Wendel\",\r\n    \"email\": \"wendel@mail.com\",\r\n    \"nickname\": \"wendelcutrim\",\r\n    \"password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"wendel@mail.com\",\r\n    \"password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"description": "# Public Routes\n\nNesta seção encontra-se as rotas públicas."
+		},
+		{
+			"name": "Private Routes",
+			"item": [
+				{
+					"name": "Books",
+					"item": [
+						{
+							"name": "Create book",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n    \"title\": \"aaa post 2\",\r\n    \"total_pages\": 36,\r\n    \"author\": \"Lucas\",\r\n    \"release_year\": \"2020\",\r\n    \"stock\": 136,\r\n    \"country_code\": \"br\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/livros",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"livros"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a book",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/livros/1",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"livros",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update book",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwibmFtZSI6IldlbmRlbCIsImVtYWlsIjoid2VuZGVsQG1haWwuY29tIiwibmlja25hbWUiOiJ3ZW5kZWxjdXRyaW0iLCJwYXNzd29yZCI6IiQyYSQxMCREQmpTN1RMS3NKdU9iRVlTTkhKQ1pPR3hVcWJ5Z3JFbzBLbHdVTjl3cEZYcXI2QWE0eTEuRyIsImNyZWF0ZWRBdCI6IjIwMjMtMDItMjRUMTc6MTc6MDguMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjMtMDItMjRUMTc6MTc6MDguMDAwWiIsImlhdCI6MTY3NzI1OTQ0NSwiZXhwIjoxNjc3MjYzMDQ1fQ.R9TByv4_stUMzM-a3vEGY7QjK5oSW5a1YmRcAKioeMM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwibmFtZSI6IldlbmRlbCIsImVtYWlsIjoid2VuZGVsQG1haWwuY29tIiwibmlja25hbWUiOiJ3ZW5kZWxjdXRyaW0iLCJwYXNzd29yZCI6IiQyYSQxMCREQmpTN1RMS3NKdU9iRVlTTkhKQ1pPR3hVcWJ5Z3JFbzBLbHdVTjl3cEZYcXI2QWE0eTEuRyIsImNyZWF0ZWRBdCI6IjIwMjMtMDItMjRUMTc6MTc6MDguMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjMtMDItMjRUMTc6MTc6MDguMDAwWiIsImlhdCI6MTY3NzI1OTQ0NSwiZXhwIjoxNjc3MjYzMDQ1fQ.R9TByv4_stUMzM-a3vEGY7QjK5oSW5a1YmRcAKioeMM",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": " { \r\n        \"title\": \"Recess: School's Out\",\r\n        \"total_pages\": 99,\r\n        \"author\": \"Cheryl Herculeson\",\r\n        \"release_year\": \"2005\",\r\n        \"stock\": 150\r\n }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/livros/2",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"livros",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:3000/api/v1",
+			"type": "string"
+		}
+	]
+}

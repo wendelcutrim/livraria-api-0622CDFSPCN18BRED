@@ -27,6 +27,8 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
 
+        country_code: DataTypes.STRING(3),
+
         stock: {
             type: DataTypes.INTEGER(10),
             allowNull: false,
